@@ -1,5 +1,5 @@
 import logo from "./assets/logo.svg";
-import "./global.css";
+import "./login.css";
 
 export function Login() {
   
