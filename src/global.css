@@ -1,0 +1,119 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html, body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #2D343C;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.container .header span {
+    padding-top: 24px;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 24px;
+    color: #FEC200;
+}
+
+.container form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container form .inputContainer {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.container form .inputContainer label {
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 19px;
+    color: #EEEDED;
+    margin-bottom: 5px;
+}
+
+.container form .inputContainer input {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 16px;
+    width: 520px;
+    height: 49px;
+    border: none;
+    border-radius: 10px;
+}
+
+.container form a {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    color: #EEEDED;
+}
+
+.container form .button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 520px;
+    height: 48px;
+    background: #FEC200;
+    border-radius: 10px;
+    border: none;
+    font-size: 29px;
+    font-weight: 200;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container form .button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.container form .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.container form .footer p,
+.container form .footer a {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #EEEDED;
+}
+
+.container form .footer a {
+    text-decoration-line: underline;
+    margin-left: 10px;
+}
