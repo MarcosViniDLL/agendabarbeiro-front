@@ -1,10 +1,7 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { Login } from './Login.jsx'
+import { AppRouter } from "./routes";
 
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Login />
-  </React.StrictMode>,
-)
+export const Main = () => {
+  return (
+    <AppRouter />
+  )
+}
