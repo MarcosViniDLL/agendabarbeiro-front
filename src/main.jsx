@@ -1,7 +1,12 @@
-import { AppRouter } from "./routes";
+import ReactDOM from 'react-dom';
+import { AppRouter } from "./routes/index.jsx";
 
 export const Main = () => {
   return (
-    <AppRouter />
+    <div id="root"> {}
+      <AppRouter />
+    </div>
   )
 }
+  
+ReactDOM.render(<Main />, document.getElementById('root'));
