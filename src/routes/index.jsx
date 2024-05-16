@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Login } from '../pages/Login/Login.jsx';
 import { Cadastro } from '../pages/Register/Cadastro.jsx';
 import { HomeHeader } from '../pages/Inicial/Home.jsx';
