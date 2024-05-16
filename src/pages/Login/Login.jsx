@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import "../Register/Cadastro.jsx";
 import logo from "../../assets/logo.svg";
 import "../Login/login.css";
 
@@ -29,7 +30,7 @@ export function Login() {
         </button>
 
         <div className="footer">
-        <p>É novo por aqui?<Link to="#">Se cadastre!</Link></p>
+        <p>É novo por aqui?<Link to="/cadastro">Se cadastre!</Link></p>
         </div>
       </form>
     </div>
