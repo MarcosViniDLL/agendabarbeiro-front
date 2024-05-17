@@ -24,13 +24,13 @@ export function Login() {
         </div>
 
         <a href="">Esqueceu a senha?</a>
-
-        <button className="button">
-          Entrar
-        </button>
-
+        
+        <Link to='/home'>
+          <button className="button">entrar</button>
+        </Link>
+      
         <div className="footer">
-        <p>É novo por aqui?<Link to="/cadastro">Se cadastre!</Link></p>
+          <p>É novo por aqui?<Link to="/cadastro">Se cadastre!</Link></p>
         </div>
       </form>
     </div>
