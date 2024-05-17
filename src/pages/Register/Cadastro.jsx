@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import "../Register/cadastro.css";
-
+import { Link } from 'react-router-dom';
 export function Cadastro() {
     const [nomeCompleto, setNomeCompleto] = useState('');
     const [telefone, setTelefone] = useState('');
@@ -68,9 +68,12 @@ export function Cadastro() {
                     <label htmlFor="confirmarSenha">Confimar Senha</label>
                     <input type="password" id="confirmarSenha" value={confirmarSenha} onChange={(e) => setConfirmarSenha(e.target.value)} required />
                 </div>
-
-                <button type='submit'>Cadastrar</button>
+                
+                <Link to="/cad-salon">
+                    <button type='submit'>cadastrar</button>
+                </Link>
             </form>
+
         </div>
     );
 }
