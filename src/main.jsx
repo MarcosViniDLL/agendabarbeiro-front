@@ -1,12 +1,10 @@
-import ReactDOM from 'react-dom';
-import { AppRouter } from "./routes/index.jsx";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+import './index.css'
 
-export const Main = () => {
-  return (
-    <div id="root"> {}
-      <AppRouter />
-    </div>
-  )
-}
-  
-ReactDOM.render(<Main />, document.getElementById('root'));
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+)

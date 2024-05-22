@@ -1,28 +1,27 @@
-import React from 'react';
-import "../Inicial/home.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog, faUser, faCut, faList } from '@fortawesome/free-solid-svg-icons'; 
+import styles from '../Inicial/Home.module.css'
 
-export function HomeHeader() {
+function HomeHeader() {
   return (
-    <div className="container">
-      <button className="settings-button">
+    <div className={styles.container}>
+      <button className={styles.settings_button}>
         <FontAwesomeIcon icon={faCog} size="lg" /> {/* Ícone de configurações */}
       </button>
-      <div className="home-header">
-        <h1 className="welcome-text">Bem-vindo, userName</h1>
+      <div className={styles.home_header}>
+        <h1 className={styles.welcome_text}>Bem-vindo, userName</h1>
       </div>
 
-      <div className="main-buttons">
-        <button className="main-button">
+      <div className={styles.main_buttons}>
+        <button className={styles.main_button}>
           <FontAwesomeIcon icon={faUser} />
           <span>Barbeiros</span>
         </button>
-        <button className="main-button">
+        <button className={styles.main_button}>
           <FontAwesomeIcon icon={faCut} />
           <span>Cortes/Serviços</span>
         </button>
-        <button className="main-button">
+        <button className={styles.main_button}>
           <FontAwesomeIcon icon={faList} />
           <span>Reservas</span>
         </button>
@@ -30,3 +29,5 @@ export function HomeHeader() {
     </div>
   );
 }
+
+export default HomeHeader;
