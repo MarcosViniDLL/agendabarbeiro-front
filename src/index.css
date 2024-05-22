@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+:root {
+    font-family: 'Poppins', sans-serif;
+    --cor-de-fundo: #2D343C;
+    --secundary: #FEC200;
+    --terceary: #EEEDED;
+}
+
+body {
+    background-color: var(--cor-de-fundo);
+}

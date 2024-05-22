@@ -1,44 +1,14 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-}
-
-html, body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #2d343c;
-}
-
-.salon-form {
-    width: 100vw;
-    height: 100vh;
+.cadastroForm {
+    max-width: 100%;
+    max-height: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-.form-group {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    margin-bottom: 18px;
-}
 
-.logoSalon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 12px;
-}
-
-.logoSalon label,
-.logoSalon input {
-    margin-top: 10px;
-}
-
-.form-group label {
+.labelFoto {
     font-weight: 350;
     font-size: 20px;
     line-height: 17px;
@@ -46,7 +16,44 @@ html, body {
     margin-bottom: 5px;
 }
 
-.form-group input {
+.inputFoto{
+    margin: 0 0 2rem 0;
+    color: var(--terceary);
+}
+
+.cadastroForm h2 {
+    font-size: 3rem;
+    color: var(--secundary);
+}
+
+.formGroup {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.fotoPerfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.fotoPerfil label,
+.fotoPerfil input {
+    margin-top: 10px;
+}
+
+.formGroup label {
+    font-weight: 350;
+    font-size: 20px;
+    line-height: 17px;
+    color: #eeeded;
+    margin-bottom: 5px;
+}
+
+.formGroup input {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -55,30 +62,33 @@ html, body {
     height: 49px;
     border: none;
     border-radius: 10px;
+    background-color: var(--terceary);
 }
 
-.salon-form h2{
-    color: #fec200;
+.cadastroForm h2{
+    color: var(--secundary);
     font-size: 30px;
 }
 
-.salon-form button {
+.cadastroForm button {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 520px;
     height: 48px;
-    background: #fec200;
+    background: var(--secundary);
     border: none;
     border-radius: 10px;
     font-size: 24px;
     font-weight: 300;
     font-family: 'Poppins', sans-serif;
+    margin: 0 0 1.5rem 0;
 }
 
-.salon-form button:hover {
+.cadastroForm button:hover {
     cursor: pointer;
     opacity: 0.8;
+    
 }
 

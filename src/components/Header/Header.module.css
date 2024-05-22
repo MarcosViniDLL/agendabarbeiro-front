@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.header span {
+    padding-top: 24px;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 24px;
+    color: var(--secundary);
+}
