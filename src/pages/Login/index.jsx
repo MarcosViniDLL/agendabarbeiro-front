@@ -20,7 +20,7 @@ function Login() {
           <input type="password" name="password" id="password" />
         </div>
 
-        <a href="">Esqueceu a senha?</a>
+        <Link to="/forgot-password" className={style.forgotPasswordLink}>Esqueceu a senha?</Link>
 
         <Link to='/home'>
           <button className={style.button}>entrar</button>
