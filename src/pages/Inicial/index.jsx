@@ -1,12 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog, faUser, faCut, faList } from '@fortawesome/free-solid-svg-icons'; 
-import styles from '../Inicial/Home.module.css'
+import styles from '../Inicial/Home.module.css';
 
 function HomeHeader() {
   return (
     <div className={styles.container}>
       <button className={styles.settings_button}>
-        <FontAwesomeIcon icon={faCog} size="lg" /> {/* Ícone de configurações */}
+        <FontAwesomeIcon icon={faCog} size="lg" />
       </button>
       <div className={styles.home_header}>
         <h1 className={styles.welcome_text}>Bem-vindo, userName</h1>
