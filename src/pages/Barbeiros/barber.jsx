@@ -1,14 +1,17 @@
 import React from 'react';
-import './AddBarber.module.css';
+import styles from './AddBarber.module.css'
+
 
 
 function AddBarber() {
 
   return (
-      <div>
-        <h1>Hello World!</h1>
-      </div>
-    );
+      
+        <section className={styles.container}>
+          <h1>Hello World!</h1>
+        </section>
+      
+    )
   }
 
 export default AddBarber;
