@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50vh 0 0 0;
+}
+
+.container  h1 {
+    color: #FFF;
+    
+}
