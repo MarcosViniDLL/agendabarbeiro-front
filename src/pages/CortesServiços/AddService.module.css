@@ -1,0 +1,241 @@
+:root {
+    font-family: 'Poppins', sans-serif;
+    --cor-de-fundo: #2D343C;
+    --secundary: #FEC200;
+    --terceary: #EEEDED;
+  }
+  
+  body {
+    background-color: var(--cor-de-fundo);
+    color: var(--terceary);
+    font-family: var(--font-family);
+  }
+  
+  .ServicesHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .HeaderRow {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .BackButton {
+    background: none;
+    border: 2px solid var(--secundary);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 30px;
+    margin-right: 10px;
+    color: white;
+    padding: 10px;
+  }
+
+  .BackButton:hover {
+    background-color: #443505;
+  }
+  
+  .Title {
+    margin: 0;
+    font-size: 30px;
+    color: var(--secundary);
+  }
+  
+  .AddBox {
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    align-self: center;
+  }
+  
+  .AddButton {
+    background-color: var(--secundary);
+    color: var(--cor-de-fundo);
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .AddButton:hover {
+    background-color: #d4a300;
+  }
+  
+  .ServiceList {
+    list-style-type: none;
+    padding: 0;
+    margin: 50px 0 0 0;
+    width: 100%;
+    max-width: 300px;
+    align-self: center;
+  }
+  
+  .ServiceList li {
+    margin: 20px;
+    padding: 20px;
+    background: var(--secundary);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000; /* Set text color to black */
+  }
+  
+  .ServiceInfo {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .Barbers {
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .BarberTag {
+    background: var(--cor-de-fundo);
+    color: var(--terceary);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 5px;
+    margin-top: 5px;
+  }
+  
+  .DeleteButton {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .Modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background: var(--cor-de-fundo);
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    color: var(--terceary);
+  }
+  
+  .Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  
+  .Input {
+    width: calc(100% - 20px);
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: var(--terceary);
+  }
+  
+  .BarbersSection {
+    margin-top: 10px;
+  }
+  
+  .Checkbox {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .Checkbox input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .CheckboxLabel {
+    margin-left: 5px;
+  }
+  
+  .ModalButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .ModalConfirmButton {
+    background-color: var(--secundary);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .ModalConfirmButton:hover {
+    background-color: #d4a300;
+  }
+  
+  .CloseButton {
+    background: none;
+    border: 2px solid var(--secundary);
+    color: var(--secundary);
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 10px;
+  }
+
+  .CloseButton:hover {
+    background-color: #5a5958;
+  }
+  
+  @media (max-width: 768px) {
+    .Title {
+      font-size: 24px;
+    }
+  
+    .AddBox {
+      padding: 15px;
+    }
+  
+    .AddButton {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  
+    .ServiceList li {
+      padding: 8px;
+      font-size: 16px;
+    }
+  
+    .Modal {
+      width: 90%;
+    }
+  
+    .ModalButtons {
+      flex-direction: column;
+    }
+  
+    .CloseButton {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  }
+  
