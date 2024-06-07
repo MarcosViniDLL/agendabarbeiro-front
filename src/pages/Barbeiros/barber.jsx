@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faArrowRight, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 import styles from './AddBarber.module.css';
 
 Modal.setAppElement('#root'); // Set the app element for accessibility
 
 function AddBarber() {
+  const navigate = useNavigate();
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [cpf, setCpf] = useState('');
   const [role, setRole] = useState('Funcionário');
@@ -21,7 +23,7 @@ function AddBarber() {
 
   const handleSearch = () => {
     // Fake search logic - In a real scenario, replace with an API call
-    const newBarber = { name: `Barbeiro ${cpf}`, role: role };
+    const newBarber = { name: `${cpf}`, role: role };
     setBarbers([...barbers, newBarber]);
     setCpf('');
     setRole('Funcionário');
@@ -35,7 +37,7 @@ function AddBarber() {
   return (
     <div className={styles.BarbeirosHeader}>
       <div className={styles.HeaderRow}>
-        <button className={styles.BackButton}>
+        <button className={styles.BackButton} onClick={() => navigate('/home')}>
           <FontAwesomeIcon icon={faArrowLeft} size="lg" />
         </button>
         <h1 className={styles.Title}>Adicionar Barbeiro</h1>
@@ -73,7 +75,7 @@ function AddBarber() {
             className={styles.SearchInput}
           />
           <button onClick={handleSearch} className={styles.SearchButton}>
-            <FontAwesomeIcon icon={faArrowRight} />
+            <FontAwesomeIcon icon={faArrowLeft} />
           </button>
         </div>
         <div className={styles.RoleSelection}>

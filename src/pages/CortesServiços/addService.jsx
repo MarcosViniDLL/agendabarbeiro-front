@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
+import Modal from 'react-modal';
 import styles from './AddService.module.css';
 
 Modal.setAppElement('#root');
@@ -9,22 +10,15 @@ Modal.setAppElement('#root');
 const barbers = ['João', 'Maria', 'Pedro'];
 
 function AddService() {
+  const navigate = useNavigate();
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [services, setServices] = useState([]);
   const [serviceName, setServiceName] = useState('');
   const [servicePrice, setServicePrice] = useState('');
   const [selectedBarbers, setSelectedBarbers] = useState([]);
+  const [services, setServices] = useState([]);
 
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
-
-  const handleBarberChange = (barber) => {
-    if (selectedBarbers.includes(barber)) {
-      setSelectedBarbers(selectedBarbers.filter(b => b !== barber));
-    } else {
-      setSelectedBarbers([...selectedBarbers, barber]);
-    }
-  };
 
   const addService = () => {
     if (serviceName && servicePrice && selectedBarbers.length > 0) {
@@ -41,15 +35,23 @@ function AddService() {
     setServices(updatedServices);
   };
 
+  const handleBarberChange = (barber) => {
+    if (selectedBarbers.includes(barber)) {
+      setSelectedBarbers(selectedBarbers.filter(b => b !== barber));
+    } else {
+      setSelectedBarbers([...selectedBarbers, barber]);
+    }
+  };
+
   return (
     <div className={styles.ServicesHeader}>
       <div className={styles.HeaderRow}>
-        <button className={styles.BackButton}>
+        <button className={styles.BackButton} onClick={() => navigate('/home')}>
           <FontAwesomeIcon icon={faArrowLeft} size="lg" />
         </button>
         <h1 className={styles.Title}>Cortes e Serviços</h1>
       </div>
-      
+
       <div className={styles.AddBox}>
         <button className={styles.AddButton} onClick={openModal}>Adicionar</button>
       </div>

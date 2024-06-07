@@ -27,17 +27,12 @@
   
   .BackButton {
     background: none;
-    border: 2px solid var(--secundary);
-    border-radius: 50%;
+    border: none;
     cursor: pointer;
     font-size: 30px;
     margin-right: 10px;
     color: white;
     padding: 10px;
-  }
-
-  .BackButton:hover {
-    background-color: #443505;
   }
   
   .Title {
