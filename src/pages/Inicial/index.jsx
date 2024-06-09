@@ -37,7 +37,7 @@ function HomeHeader() {
           <FontAwesomeIcon icon={faCut} />
           <span>Cortes/Serviços</span>
         </button>
-        <button className={styles.main_button}>
+        <button className={styles.main_button} onClick={() => navigate('/reservas')}>
           <FontAwesomeIcon icon={faList} />
           <span>Reservas</span>
         </button>

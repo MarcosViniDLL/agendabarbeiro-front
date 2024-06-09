@@ -1,8 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import style from '../Register/Register.module.css'
-
-
+import style from '../Register/Register.module.css';
 
 function Cadastro() {
     const [nomeCompleto, setNomeCompleto] = useState('');
@@ -13,6 +10,7 @@ function Cadastro() {
     const [senha, setSenha] = useState('');
     const [confirmarSenha, setConfirmarSenha] = useState('');
     const [fotoPerfil, setFotoPerfil] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -27,11 +25,18 @@ function Cadastro() {
             confirmarSenha,
             fotoPerfil
         });
+
+        // Abre o modal
+        setIsModalOpen(true);
     };
 
     const handleFotoChange = (event) => {
         const foto = event.target.files[0];
         setFotoPerfil(foto);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
     };
 
     return (
@@ -72,11 +77,19 @@ function Cadastro() {
                     <input type="password" id="confirmarSenha" value={confirmarSenha} onChange={(e) => setConfirmarSenha(e.target.value)} required />
                 </div>
 
-                <Link to="/cad-salon">
-                    <button type='submit'>cadastrar</button>
-                </Link>
+                <button type='submit'>Cadastrar</button>
             </form>
 
+            {isModalOpen && (
+                <div className={style.modal}>
+                    <div className={style.modalContent}>
+                        <h2>Cadastro realizado com sucesso!</h2>
+                        <button onClick={closeModal}>Fechar</button>
+                    </div>
+                </div>
+            )}
+
+            <a href="/cad-salon" className={style.cadSalonLink}>Cadastre seu salão por aqui</a>
         </div>
     );
 }
