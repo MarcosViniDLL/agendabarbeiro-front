@@ -7,7 +7,6 @@
     flex-direction: column;
 }
 
-
 .labelFoto {
     font-weight: 350;
     font-size: 20px;
@@ -65,7 +64,7 @@
     background-color: var(--terceary);
 }
 
-.cadastroForm h2{
+.cadastroForm h2 {
     color: var(--secundary);
     font-size: 30px;
 }
@@ -89,6 +88,34 @@
 .cadastroForm button:hover {
     cursor: pointer;
     opacity: 0.8;
-    
 }
 
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalContent {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.cadSalonLink {
+    color: var(--secundary);
+    font-size: 18px;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.cadSalonLink:hover {
+    text-decoration: underline;
+}
