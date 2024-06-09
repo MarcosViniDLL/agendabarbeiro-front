@@ -20,7 +20,6 @@ function AppRouter() {
                 <Route path="/forgot-password" element={<ForgotPassword />} />
                 <Route path="/add-barber" element={<AddBarber />} />
                 <Route path="/add-service" element={<AddService />} />
-                <Route path="/settings" element={<Settings />} />
                 <Route path="/reservas" element={<Reservas />} />
             </Routes>
         </Router>
