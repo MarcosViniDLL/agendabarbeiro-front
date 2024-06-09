@@ -1,4 +1,16 @@
-/* Home.module.css */
+:root {
+  font-family: 'Poppins', sans-serif;
+  --cor-de-fundo: #2D343C;
+  --secundary: #FEC200;
+  --terceary: #EEEDED;
+}
+
+body {
+  background-color: var(--cor-de-fundo);
+  color: var(--terceary);
+  font-family: var(--font-family);
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -64,4 +76,48 @@
 
 .main_button span {
   margin-left: 10px;
+}
+
+.Modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background: var(--cor-de-fundo);
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  color: var(--terceary);
+  text-align: center;
+}
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.ConfirmButton,
+.CloseButton {
+  background-color: var(--secundary);
+  color: var(--cor-de-fundo);
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  margin: 10px;
+}
+
+.ConfirmButton:hover,
+.CloseButton:hover {
+  background-color: #d4a300;
 }

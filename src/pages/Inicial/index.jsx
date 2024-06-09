@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCog, faUser, faCut, faList } from '@fortawesome/free-solid-svg-icons'; 
+import { faUser, faCut, faList, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'; 
 import { useNavigate } from 'react-router-dom';
+import Modal from 'react-modal';
 import styles from '../Inicial/Home.module.css';
+
+Modal.setAppElement('#root');
 
 function HomeHeader() {
   const navigate = useNavigate();
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => setModalIsOpen(true);
+  const closeModal = () => setModalIsOpen(false);
+
+  const handleLogout = () => {
+    closeModal();
+    navigate('/');
+  };
 
   return (
     <div className={styles.container}>
-      <button className={styles.settings_button} onClick={() => navigate('/settings')}>
-        <FontAwesomeIcon icon={faCog} size="lg" />
+      <button className={styles.settings_button} onClick={openModal}>
+        <FontAwesomeIcon icon={faSignOutAlt} size="lg" />
       </button>
       <div className={styles.home_header}>
         <h1 className={styles.welcome_text}>Bem-vindo, userName</h1>
@@ -30,6 +42,20 @@ function HomeHeader() {
           <span>Reservas</span>
         </button>
       </div>
+
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Confirmar Logout"
+        className={styles.Modal}
+        overlayClassName={styles.Overlay}
+      >
+        <h2>Tem certeza que gostaria de sair?</h2>
+        <div className={styles.buttonContainer}>
+          <button onClick={handleLogout} className={styles.ConfirmButton}>Sim</button>
+          <button onClick={closeModal} className={styles.CloseButton}>Não</button>
+        </div>
+      </Modal>
     </div>
   );
 }
