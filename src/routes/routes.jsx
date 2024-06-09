@@ -7,6 +7,7 @@ import ForgotPassword from '../pages/Forgotpass/forgot.jsx';
 import AddBarber from '../pages/Barbeiros/barber.jsx';
 import AddService from '../pages/CortesServiços/addService.jsx';
 import Settings from '../pages/Configuração/settings.jsx';
+import Reservas from '../pages/Reservas/Reservas.jsx';
 
 function AppRouter() {
     return (
@@ -19,7 +20,8 @@ function AppRouter() {
                 <Route path="/forgot-password" element={<ForgotPassword />} />
                 <Route path="/add-barber" element={<AddBarber />} />
                 <Route path="/add-service" element={<AddService />} />
-                <Route path="/settings" element={<Settings />} /> 
+                <Route path="/settings" element={<Settings />} />
+                <Route path="/reservas" element={<Reservas />} />
             </Routes>
         </Router>
     );
