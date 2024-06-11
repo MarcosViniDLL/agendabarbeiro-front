@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
+import { getBarbers } from '../../api/api';
 import styles from './AddBarber.module.css';
 
 Modal.setAppElement('#root'); // Set the app element for accessibility
@@ -12,18 +13,29 @@ function AddBarber() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [cpf, setCpf] = useState('');
   const [role, setRole] = useState('Funcionário');
-  const [barbers, setBarbers] = useState([
-    { name: 'João', role: 'Gerente' },
-    { name: 'Maria', role: 'Funcionária' },
-    { name: 'Pedro', role: 'Funcionário' }
-  ]);
+  const [barbers, setBarbers] = useState([]);
+
+  useEffect(() => {
+    const fetchBarbers = async () => {
+      try {
+        const response = await getBarbers();
+        console.log(response.data);
+        setBarbers(response.data);
+      } catch (error) {
+        console.error('Error fetching barbers:', error);
+        setBarbers([]);
+      }
+    };
+
+    fetchBarbers();
+  }, []);
 
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
 
   const handleSearch = () => {
     // Fake search logic - In a real scenario, replace with an API call
-    const newBarber = { name: `${cpf}`, role: role };
+    const newBarber = { full_name: `${cpf}`, role: role };
     setBarbers([...barbers, newBarber]);
     setCpf('');
     setRole('Funcionário');
@@ -49,8 +61,17 @@ function AddBarber() {
 
       <ul className={styles.BarberList}>
         {barbers.map((barber, index) => (
-          <li key={index}>
-            {barber.name} - {barber.role}
+          <li key={index} className={styles.BarberItem}>
+            <div className={styles.BarberInfo}>
+              <img src={barber.photo} alt={barber.full_name} className={styles.BarberPhoto} />
+              <div>
+                <p><strong>Nome:</strong> {barber.full_name}</p>
+                <p><strong>CPF:</strong> {barber.cpf}</p>
+                <p><strong>Função:</strong> {barber.is_manager ? 'Gerente' : 'Funcionário'}</p>
+                <p><strong>Telefone:</strong> {barber.phone}</p>
+                <p><strong>Email:</strong> {barber.email}</p>
+              </div>
+            </div>
             <button className={styles.DeleteButton} onClick={() => handleDelete(index)}>
               <FontAwesomeIcon icon={faTrash} />
             </button>
