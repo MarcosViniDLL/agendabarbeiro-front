@@ -6,7 +6,6 @@ import Salon from '../pages/Salon/index.jsx';
 import ForgotPassword from '../pages/Forgotpass/forgot.jsx';
 import AddBarber from '../pages/Barbeiros/barber.jsx';
 import AddService from '../pages/CortesServiços/addService.jsx';
-import Settings from '../pages/Configuração/settings.jsx';
 import Reservas from '../pages/Reservas/Reservas.jsx';
 
 function AppRouter() {
