@@ -15,3 +15,10 @@ export const getServices = () => {
   return api.get('/services');
 };
 
+export const login = (username, password) => {
+  return api.post('/login', {
+    username,
+    password
+  });
+};
+

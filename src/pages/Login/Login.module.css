@@ -1,3 +1,5 @@
+/* src/pages/Login/Login.module.css */
+
 .container {
     width: 100vw;
     height: 100vh;
@@ -8,21 +10,20 @@
     flex-direction: column;
 }
 
-
 .container form {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.container form .inputContainer {
+.inputContainer {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
     margin-bottom: 18px;
 }
 
-.container label {
+label {
     font-weight: 100;
     font-size: 20px;
     line-height: 19px;
@@ -30,7 +31,7 @@
     margin-bottom: 5px;
 }
 
-.container  input {
+input {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -42,7 +43,7 @@
     background-color: var(--terceary);
 }
 
-.container form a {
+form a {
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
@@ -51,7 +52,7 @@
     color: var(--terceary);
 }
 
-.container form .button {
+.button {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -66,20 +67,20 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.container form .button:hover {
+.button:hover {
     cursor: pointer;
     opacity: 0.8;
 }
 
-.container form .footer {
+.footer {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
 
-.container form .footer p,
-.container form .footer a {
+.footer p,
+.footer a {
     display: inline-block;
     font-weight: 400;
     font-size: 16px;
@@ -87,7 +88,7 @@
     color: #EEEDED;
 }
 
-.container form .footer a {
+.footer a {
     text-decoration-line: underline;
     margin-left: 10px;
 }

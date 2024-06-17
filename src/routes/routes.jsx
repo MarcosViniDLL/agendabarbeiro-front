@@ -7,6 +7,7 @@ import ForgotPassword from '../pages/Forgotpass/forgot.jsx';
 import AddBarber from '../pages/Barbeiros/barber.jsx';
 import AddService from '../pages/CortesServiços/addService.jsx';
 import Reservas from '../pages/Reservas/Reservas.jsx';
+import PrivateRoute from '../api/rotas.jsx';
 
 function AppRouter() {
     return (
@@ -14,12 +15,12 @@ function AppRouter() {
             <Routes>
                 <Route path="/" element={<Login />} />
                 <Route path="/cadastro" element={<Cadastro />} />
-                <Route path="/home" element={<HomeHeader />} />
-                <Route path="/cad-salon" element={<Salon />} />
+                <Route path="/home" element={<PrivateRoute><HomeHeader /></PrivateRoute>} />
+                <Route path="/cad-salon" element={<PrivateRoute><Salon /></PrivateRoute>} />
                 <Route path="/forgot-password" element={<ForgotPassword />} />
-                <Route path="/add-barber" element={<AddBarber />} />
-                <Route path="/add-service" element={<AddService />} />
-                <Route path="/reservas" element={<Reservas />} />
+                <Route path="/add-barber" element={<PrivateRoute><AddBarber /></PrivateRoute>} />
+                <Route path="/add-service" element={<PrivateRoute><AddService /></PrivateRoute>} />
+                <Route path="/reservas" element={<PrivateRoute><Reservas /></PrivateRoute>} />
             </Routes>
         </Router>
     );

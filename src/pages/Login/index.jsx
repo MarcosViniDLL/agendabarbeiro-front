@@ -1,38 +1,59 @@
-import { Link } from 'react-router-dom';
-import "../Register/index.jsx";
-import style from '../Login/Login.module.css'
+import { Link, useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/index.jsx';
+import { login } from '../../api/api.js';
+import { useState } from 'react';
+import style from './Login.module.css'; // Certifique-se de que o caminho está correto
 
-function Login() {
+const Login = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await login(username, password);
+      const token = response.data.token;
+
+      localStorage.setItem('token', token);
+
+      navigate('/home');
+    } catch (error) {
+      setError('Credenciais inválidas');
+    }
+  };
 
   return (
     <div className={style.container}>
-      <Header/>
-
-      <form>
+      <Header />
+      <h1>Login</h1>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+      <form onSubmit={handleLogin}>
         <div className={style.inputContainer}>
-          <label htmlFor="email">E-mail</label>
-          <input type="text" name="email" id="email" />
+          <label>Username:</label>
+          <input 
+            type="text" 
+            value={username} 
+            onChange={(e) => setUsername(e.target.value)} 
+          />
         </div>
-
         <div className={style.inputContainer}>
-          <label htmlFor="password">Senha</label>
-          <input type="password" name="password" id="password" />
+          <label>Password:</label>
+          <input 
+            type="password" 
+            value={password} 
+            onChange={(e) => setPassword(e.target.value)} 
+          />
         </div>
-
-        <Link to="/forgot-password" className={style.forgotPasswordLink}>Esqueceu a senha?</Link>
-
-        <Link to='/home'>
-          <button className={style.button}>entrar</button>
-        </Link>
-
+        <button type="submit" className={style.button}>Login</button>
         <div className={style.footer}>
-          <p>É novo por aqui?<Link to="/cadastro">Se cadastre!</Link></p>
+          <p>Não tem uma conta?</p>
+          <Link to="/cadastro">Cadastre-se</Link>
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
 export default Login;
-

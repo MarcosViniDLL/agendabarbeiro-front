@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import style from '../Register/Register.module.css';
 
 function Cadastro() {
@@ -26,7 +27,6 @@ function Cadastro() {
             fotoPerfil
         });
 
-        // Abre o modal
         setIsModalOpen(true);
     };
 
@@ -89,7 +89,7 @@ function Cadastro() {
                 </div>
             )}
 
-            <a href="/cad-salon" className={style.cadSalonLink}>Cadastre seu salão por aqui</a>
+            <Link to="/cad-salon" className={style.cadSalonLink}>Cadastre seu salão por aqui</Link>
         </div>
     );
 }
