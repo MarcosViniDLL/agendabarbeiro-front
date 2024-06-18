@@ -16,9 +16,20 @@ export const getServices = () => {
 };
 
 export const login = (username, password) => {
-  return api.post('/login', {
+  return api.post('api/token/', {
     username,
     password
   });
 };
 
+export const info = (token) => {
+  return api.get('auth/', {
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  });
+};
+
+export const getBooking = () => {
+  return api.get('booking/');
+};

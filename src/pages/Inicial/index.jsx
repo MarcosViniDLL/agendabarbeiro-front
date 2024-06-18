@@ -1,15 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faCut, faList, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'; 
 import { useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import styles from '../Inicial/Home.module.css';
+import { info } from '../../api/api';  // Importando a função info
 
 Modal.setAppElement('#root');
 
 function HomeHeader() {
   const navigate = useNavigate();
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [userName, setUserName] = useState('');
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    console.log('Token retrieved from local storage:', token);
+    if (token) {
+      info(token)
+        .then(response => {
+          console.log('User info retrieved:', response.data); 
+          setUserName(response.data.user.username);
+        })
+        .catch(error => {
+          console.error('Error fetching user info', error);
+        });
+    } else {
+      console.error('No token found in local storage');
+    }
+  }, []);
 
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
@@ -25,7 +44,7 @@ function HomeHeader() {
         <FontAwesomeIcon icon={faSignOutAlt} size="lg" />
       </button>
       <div className={styles.home_header}>
-        <h1 className={styles.welcome_text}>Bem-vindo, userName</h1>
+        <h1 className={styles.welcome_text}>Bem-vindo, {userName}</h1>
       </div>
 
       <div className={styles.main_buttons}>

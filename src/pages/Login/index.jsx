@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/index.jsx';
 import { login } from '../../api/api.js';
 import { useState } from 'react';
-import style from './Login.module.css'; // Certifique-se de que o caminho está correto
+import style from './Login.module.css';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -14,7 +14,8 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await login(username, password);
-      const token = response.data.token;
+      const token = response.data.access;
+      console.log(token);
 
       localStorage.setItem('token', token);
 

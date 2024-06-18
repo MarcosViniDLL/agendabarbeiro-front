@@ -1,79 +1,64 @@
-/* Reservas.css */
+:root {
+  font-family: 'Poppins', sans-serif;
+  --cor-de-fundo: #2D343C;
+  --secundary: #FEC200;
+  --terceary: #EEEDED;
+}
+
+body {
+  background-color: var(--cor-de-fundo);
+  color: var(--terceary);
+  font-family: var(--font-family);
+}
 
 .reservas {
-    font-family: Arial, sans-serif;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h1 {
-    text-align: center;
-    color: var(--secundary);
-  }
-  
-  .filtros {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  .filtro-usuario,
-  .filtro-salao {
-    flex: 1;
-    margin: 0 10px;
-  }
-  
-  .filtro-usuario label,
-  .filtro-salao label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: var(--secundary);
-  }
-  
-  .Select__control {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .Select__control--is-focused {
-    border-color: #007bff;
-    box-shadow: 0 0 0 1px #007bff;
-  }
-  
-  .Select__menu {
-    border-radius: 4px;
-  }
-  
-  .lista-reservas {
-    margin-top: 20px;
-  }
-  
-  .lista-reservas h2 {
-    margin-bottom: 10px;
-    color: var(--secundary);
-  }
-  
-  .lista-reservas ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .lista-reservas li {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    background-color: #f9f9f9;
-  }
-  
-  .lista-reservas li:nth-child(even) {
-    background-color: #f1f1f1;
-  }
-  
-  .lista-reservas p {
-    text-align: center;
-    color: #777;
-  }
-  
+  padding: 20px;
+}
+
+h1, h2 {
+  color: var(--secundary);
+}
+
+.filtros {
+  margin-bottom: 20px;
+}
+
+.filtro-usuario {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Select__control {
+  background-color: var(--cor-de-fundo);
+  color:  var(--cor-de-fundo);
+  border: 1px solid var(--secundary);
+}
+
+.lista-reservas {
+  margin-top: 20px;
+}
+
+.lista-reservas ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.lista-reservas li {
+  background-color: var(--secundary);
+  color: var(--cor-de-fundo);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.lista-reservas li.completed {
+  background-color: #d4a300;
+  text-decoration: line-through;
+}
+
+.lista-reservas li input[type="checkbox"] {
+  margin-right: 10px;
+}
