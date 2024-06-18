@@ -2,12 +2,16 @@ import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
 import './reservas.css';
 import { getBooking, getBarbers } from '../../api/api';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useNavigate } from 'react-router-dom';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'; 
 
 const Reservas = () => {
   const [selectedUsuario, setSelectedUsuario] = useState(null);
   const [usuarios, setUsuarios] = useState([]);
   const [reservas, setReservas] = useState([]);
   const [completedReservations, setCompletedReservations] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -57,7 +61,10 @@ const Reservas = () => {
 
   return (
     <div className="reservas">
-      <h1>Reservas</h1>
+      <button className="BackButton" onClick={() => navigate('/home')}>
+          <FontAwesomeIcon icon={faArrowLeft} size="lg" />
+      </button>
+        <h1>Reservas</h1>
       <div className="filtros">
         <div className="filtro-usuario">
           <label>Filtrar por Colaborador:</label>
